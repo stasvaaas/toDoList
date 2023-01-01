@@ -1,0 +1,18 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+{% load static %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+<div class="header-bar">
+    <a href="{% url 'tasks' %}">&#8592; Back</a>
+    </div>
+
+<div class="card-body">
+<h1>Task: {{ task.title }}</h1>
+<h2> Description:</h2>
+<h3>{{task.description }}</h3>
+<a  class="mbutton"  style="margin-left:0px ;margin-right:10px"  href="{% url 'task-delete' task.id %}">Delete</a>
+<a  class="button" href="{% url 'task-update' task.id %}">Edit</a>
+
+</div>
+{% endblock content %}
